@@ -198,7 +198,7 @@ git push origin --delete [branchname]
 git fetch -p
 ```
 
-参考：[Git分支的意义和使用方](https://blog.csdn.net/qq_27674439/article/details/107412097)
+参考：[Git分支的意义和使用方法](https://blog.csdn.net/qq_27674439/article/details/107412097)
 
 ## 2、怎么修改最新commit的message
 
