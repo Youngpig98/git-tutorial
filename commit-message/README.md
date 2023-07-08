@@ -20,11 +20,11 @@
 
 ​	`git rebase` 的最大作用是它可以重写历史。我们通常会通过 `git rebase -i <commit ID>`使用 `git rebase` 命令，-i 参数表示交互（interactive），该命令会进入到一个交互界面中，其实就是 Vim 编辑器。在该界面中，我们可以对里面的 commit 做一些操作，交互界面如图所示：
 
-<img src="../../img/git1.jpg" style="zoom: 50%;" />
+<img src="../assets/git1.jpg" style="zoom: 50%;" />
 
 ​	这个交互界面会首先列出给定<commit ID>**之前（不包括，越下面越新）**的所有 commit，每个 commit 前面有一个操作命令，默认是 pick。我们可以选择不同的 commit，并修改 commit 前面的命令，来对该 commit 执行不同的变更操作。git rebase 支持的变更操作如下：
 
-<img src="../../img/git2.jpg"  />
+<img src="../assets/git2.jpg"  />
 
 ​	在上面的 7 个命令中，**squash 和 fixup 可以用来合并 commit**。例如用 squash 来合并，我们只需要把要合并的 commit 前面的动词，改成 squash（或者 s）即可。你可以看看下面的示例：
 
@@ -130,11 +130,11 @@ $ git rebase -i 7157e9e
 
 ​	执行命令后，我们会进入到一个交互界面，在该界面中，我们可以将需要合并的 4 个 commit，都执行 squash 操作，如下图所示：
 
-<img src="../../img/git3.jpg" style="zoom:80%;" />
+<img src="../assets/git3.jpg" style="zoom:80%;" />
 
 ​	修改完成后执行:wq 保存，会跳转到一个新的交互页面，在该页面，我们可以编辑 Commit Message，编辑后的内容如下图所示：
 
-<img src="../../img/git4.jpg" style="zoom:80%;" />
+<img src="../assets/git4.jpg" style="zoom:80%;" />
 
 ​	#开头的行是 git 的注释，我们可以忽略掉，在 rebase 后，这些行将会消失掉。修改完成后执行:wq 保存，就完成了合并提交操作。
 
@@ -205,7 +205,7 @@ $ git log –oneline
 
 ​	在当前 Git 仓库下执行命令：`git commit --amend`，后会进入一个交互界面，在交互界面中，修改最近一次的 Commit Message，如下图所示：
 
-<img src="../../img/git5.jpg" style="zoom:80%;" />
+<img src="../assets/git5.jpg" style="zoom:80%;" />
 
 ​	修改完成后执行:wq 保存，退出编辑器之后，会在命令行显示，该 commit 的 message 的更新结果如下：
 
@@ -245,11 +245,11 @@ a38f808 docs(docs): append test line 'update$i' to README.md
 
 ​	在 Git 仓库下直接执行命令 **`git rebase -i 55892fa`**，然后会进入一个交互界面。在交互界面中，修改最近一次的 Commit Message。这里我们使用 reword 或者 r，保留倒数第 3 次的变更信息，但是修改其 message，如下图所示：
 
-<img src="../../img/git6.jpg" style="zoom:80%;" />
+<img src="../assets/git6.jpg" style="zoom:80%;" />
 
 ​	修改完成后执行:wq 保存，还会跳转到一个新的交互页面，如下图所示：
 
-<img src="../../img/git7.jpg" style="zoom:80%;" />
+<img src="../assets/git7.jpg" style="zoom:80%;" />
 
 ​	修改完成后执行:wq 保存，退出编辑器之后，会在命令行显示该 commit 的 message 的更新结果：
 
