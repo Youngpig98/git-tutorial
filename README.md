@@ -107,6 +107,8 @@
 > [alias] 
 >
 > ​	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+>
+> [git push 的 -u 参数含义](https://blog.csdn.net/Lakers2015/article/details/111318801)
 
 ### 5、探秘 .Git 目录 
 
