@@ -88,7 +88,7 @@ Fix PostChecker::Post#urls
 
 ​	假设我们需要研发一个新的模块：user，用来在平台里进行用户的注册、登录、注销等操作，当模块完成开发和测试后，需要合并到主干分支，具体步骤如下。
 
-​	**首先，我们新建一个分支。**我们需要先基于 master 分支新建并切换到 feature 分支：
+​	**首先，我们新建一个分支**。我们需要先基于 master 分支新建并切换到 feature 分支：
 
 ```shell
 $ git checkout -b feature/user
@@ -122,7 +122,7 @@ fc70a21 feat(user): add create user function
 
 ​	可以看到我们提交了 5 个 commit。接下来，我们需要将 feature/user分支的改动合并到 master 分支，但是 5 个 commit 太多了，我们想将这些 commit 合并后再提交到 master 分支。
 
-​	**接着，我们合并所有 commit。**在上一步中，我们知道 fc70a21是 feature/user分支的第一个 commit ID，其父 commit ID 是 7157e9e，我们需要将7157e9e之前的所有分支 进行合并，这时我们可以执行：
+​	**接着，我们合并所有 commit**。在上一步中，我们知道 fc70a21是 feature/user分支的第一个 commit ID，其父 commit ID 是 7157e9e，我们需要将7157e9e之前的所有分支 进行合并，这时我们可以执行：
 
 ```shell
 $ git rebase -i 7157e9e
@@ -143,7 +143,7 @@ $ git rebase -i 7157e9e
 - `git rebase -i <commid ID>`这里的一定要是需要合并 commit 中最旧 commit 的父 commit ID。
 - 我们希望将 feature/user 分支的 5 个 commit 合并到一个 commit，在 git rebase 时，需要保证其中最新的一个 commit 是 pick 状态，这样我们才可以将其他 4 个 commit 合并进去。
 
-​	**然后，我们用如下命令来检查 commits 是否成功合并。**可以看到，我们成功将 5 个 commit 合并成为了一个 commit：d6b17e0。
+​	**然后，我们用如下命令来检查 commits 是否成功合并**。可以看到，我们成功将 5 个 commit 合并成为了一个 commit：d6b17e0。
 
 ```shell
 $ git log --oneline
